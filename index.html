@@ -70,7 +70,13 @@
         </form>
       </div>
       <!-- toggle box  -->
-      <div class="toggle-box">
+      <div class="brand-logo-container" id="brandLogo">
+  <img src="https://img.icons8.com/ios/100/lotus.png" alt="Dimora Logo" class="brand-logo">
+  <h1 class="brand-name">Dimora</h1>
+</div>
+
+<div class="toggle-box" id="toggleBox">
+
         <!-- toggle box left  -->
         <div class="toggle-panel toggle-left">
             <h1>Hello, Welcome!</h1>
@@ -87,5 +93,20 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script>
+  window.addEventListener('scroll', function() {
+    const logo = document.getElementById('brandLogo');
+    const toggleBox = document.getElementById('toggleBox');
+    
+    if (window.scrollY > 20) {
+      logo.classList.add('show-logo');
+      toggleBox.classList.add('shrink-box');
+    } else {
+      logo.classList.remove('show-logo');
+      toggleBox.classList.remove('shrink-box');
+    }
+  });
+</script>
+
   </body>
 </html>
