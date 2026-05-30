@@ -219,7 +219,7 @@ form {
 
 /* RESPONSIVE */
 
-/* ==================== الميديا كويري الشاملة للموبايل ==================== */
+  /* ==================== الميديا كويري الشاملة للموبايل ==================== */
 @media screen and (max-width: 650px) {
   .container {
     height: calc(100vh - 40px);
@@ -390,4 +390,3 @@ form {
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.5px;
 }
-
