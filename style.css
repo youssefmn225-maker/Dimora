@@ -219,6 +219,7 @@ form {
 
 /* RESPONSIVE */
 
+/* ==================== الميديا كويري الشاملة للموبايل ==================== */
 @media screen and (max-width: 650px) {
   .container {
     height: calc(100vh - 40px);
@@ -227,7 +228,7 @@ form {
   /* 1. ضبط الفرم ومنعها من ركوب النصوص */
   .form-box {
     width: 100%;
-    height: 60%;
+    height: 55%; /* صغرنا الفرم سنة عشان ندي مساحة للمربع الأزرق */
     bottom: 0;
     top: auto;
     padding: 20px 30px;
@@ -259,13 +260,14 @@ form {
     visibility: visible;
   }
 
-  /* 2. زق المربع الأزرق تحت اللوجو عشان يمنع التداخل */
+  /* 2. المربع الأزرق بكامل محتوياته (الترحيب والزراير) والحركة */
   .toggle-box {
     width: 100%;
-    height: 40%;
-    top: 95px; /* المسافة السحرية اللي هتنزل المربع تحت اللوجو تماماً */
+    height: 45%; /* كبرنا المساحة لـ 45% عشان تشيل اللوجو والترحيب والزرار مرتاحين */
+    top: 0;
     bottom: auto;
-    left: 0;
+    left: 0 !important;
+    transition: all 0.4s ease-in-out !important; /* تنعيم الحركة مع السحب */
   }
 
   .toggle-box::before {
@@ -281,48 +283,63 @@ form {
     top: 70%;
   }
 
-  /* 3. إخفاء البانل الميت ورا عشان الحروف متتداخلش */
+  /* 3. تنسيق محتوى الترحيب والزراير جوه المربع الأزرق */
   .toggle-panel {
     width: 100%;
     height: 100%;
     top: 0;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
+  /* إخفاء البانل غير النشط عشان الحروف متتداخلش */
   .toggle-panel.toggle-left {
     top: 0;
-    left: 0;
-    display: flex;
+    left: 0 !important;
   }
 
   .container.active .toggle-panel.toggle-left {
     top: -100%;
-    left: 0;
-    display: none;
+    left: 0 !important;
   }
 
   .toggle-panel.toggle-right {
     top: 100%;
-    right: 0;
-    left: 0;
-    display: none;
+    right: 0 !important;
+    left: 0 !important;
   }
 
   .container.active .toggle-panel.toggle-right {
     top: 0;
-    right: 0;
-    left: 0;
-    display: flex;
+    right: 0 !important;
+    left: 0 !important;
   }
 
+  /* تظبيط مقاسات النصوص والزراير عشان تكفي الشاشة */
   .toggle-panel h1 {
-    font-size: 22px;
-    margin-top: 10px;
+    font-size: 24px !important;
+    margin-top: 65px !important; /* مساحة علوية عشان اللوجو لما يظهر ميتغطاش بكلام الترحيب */
+    margin-bottom: 5px !important;
   }
   
   .toggle-panel p {
-    font-size: 13px;
-    margin-bottom: 10px;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .toggle-panel .btn {
+    width: 140px !important;
+    height: 40px !important;
+    font-size: 14px !important;
+  }
+
+  /* 4. الكلاس السحري اللي بيشتغل لما تسحب بصباعك لتحت */
+  .shrink-box {
+    transform: translateY(90px); /* المربع الأزرق ينزل تحت بنعومة لما تسحب */
+    height: calc(45% - 90px) !important;
   }
 }
 
@@ -346,7 +363,7 @@ form {
   }
 }
 
-/* ==================== تنسيق اللوجو الافتراضي فوق ==================== */
+/* ==================== تنسيق اللوجو الافتراضي ==================== */
 .brand-logo-container {
   display: flex;
   flex-direction: column;
@@ -373,3 +390,4 @@ form {
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.5px;
 }
+
