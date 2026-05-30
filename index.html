@@ -94,14 +94,27 @@
     </div>
     <script src="script.js"></script>
     <script>
-  window.addEventListener('scroll', function() {
-    const logo = document.getElementById('brandLogo');
-    const toggleBox = document.getElementById('toggleBox');
-    
-    if (window.scrollY > 20) {
+  let startY = 0;
+  const logo = document.getElementById('brandLogo');
+  const toggleBox = document.getElementById('toggleBox');
+
+  // لما المستخدم يحط صباعه على الشاشة
+  window.addEventListener('touchstart', function(e) {
+    startY = e.touches[0].clientY;
+  });
+
+  // لما يمسح أو يشد بصباعه
+  window.addEventListener('touchmove', function(e) {
+    let moveY = e.touches[0].clientY;
+    let diffY = moveY - startY;
+
+    // لو شد الشاشة لتحت بمسافة واضحة
+    if (diffY > 50) {
       logo.classList.add('show-logo');
       toggleBox.classList.add('shrink-box');
-    } else {
+    } 
+    // لو سحب لفوق تاني عشان يقفلها
+    else if (diffY < -50) {
       logo.classList.remove('show-logo');
       toggleBox.classList.remove('shrink-box');
     }
