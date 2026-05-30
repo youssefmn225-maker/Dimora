@@ -334,7 +334,7 @@ form {
   }
 
 }
-/* تنسيق حاوية اللوجو فوق المربع الأزرق */
+/* تنسيق حاوية اللوجو الأساسية */
 .brand-logo-container {
   display: flex;
   flex-direction: column;
@@ -347,7 +347,7 @@ form {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100; /* رفعنا الطبقة عشان اللوجو يظهر فوق أي حاجة */
+  z-index: 100;
   background-color: #ffffff;
   transition: all 0.4s ease-in-out;
 }
@@ -367,30 +367,42 @@ form {
   margin-bottom: 10px;
 }
 
-/* تنعيم حركة المربع الأزرق القديم والخلفية بتاعته */
+/* تنعيم حركة المربع الأزرق */
 .toggle-box {
   transition: all 0.4s ease-in-out !important;
-  top: 0 !important;
 }
 
-.toggle-box::before {
-  transition: all 0.4s ease-in-out !important;
-  top: 0 !important;
-}
-
-/* الكلاسات السحرية اللي جافا سكريبت بيضيفها لما تشد الشاشة لتحت */
+/* الكلاسات السحرية مع السحب لتحت */
 .show-logo {
-  max-height: 100px; /* اللوجو يظهر كامل */
+  max-height: 100px;
   opacity: 1;
 }
 
+/* تظبيط زقة المربع الأزرق على الديسكتوب والـ Normal View */
 .shrink-box {
-  /* بيزق المربع الأزرق بالكامل لتحت مسافة 100 بكسل عشان ينزل في مكانه الصح */
   top: 100px !important;
   height: calc(100% - 100px) !important;
 }
 
-/* تعديل حركة الخلفية الزرقاء جوه المربع لتنزل مع السحب */
-.shrink-box::before {
-  height: 100% !important;
+/* حماية التصميم على الموبايل (الميديا كويري) */
+@media screen and (max-width: 650px) {
+  /* منع اللوحة الزرقاء إنها تفرش في الشاشة كلها */
+  .toggle-box {
+    height: 40% !important; 
+    top: 0 !important;
+    bottom: auto !important;
+  }
+  
+  /* لما نسحب لتحت على الموبايل: نزق اللوحة الزرقاء بسلاسة */
+  .shrink-box {
+    top: 100px !important;
+    transform: none !important;
+  }
+
+  /* تأكيد ظهور خانات الـ Login والـ Register تحت وما تختفيش */
+  .form-box {
+    height: 60% !important;
+    bottom: 0 !important;
+    top: auto !important;
+  }
 }
