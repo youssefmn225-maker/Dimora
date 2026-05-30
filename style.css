@@ -334,3 +334,51 @@ form {
   }
 
 }
+/* تنسيق اللوجو فوق المربع الأزرق */
+.brand-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  transition: all 0.4s ease-in-out;
+}
+
+.brand-logo {
+  width: 45px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222222;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+
+/* تنعيم حركة المربع الأزرق القديم */
+.toggle-box {
+  transition: all 0.4s ease-in-out !important;
+  top: 0;
+}
+
+/* الكلاسات السحرية اللي هتشتغل مع سحبة الصباع */
+.show-logo {
+  max-height: 90px;
+  opacity: 1;
+}
+
+.shrink-box {
+  transform: translateY(90px);
+  height: calc(100% - 90px) !important;
+}
