@@ -268,20 +268,11 @@ form {
   /* REGISTER */
 
 .container.active .form-box.register {
-    top: 35vh !important;
+    bottom: 0 !important;
+    padding-top: 190px !important;
     visibility: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-  .container.active .form-box.register {
-    bottom: 180px;
-    visibility: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   /* TOGGLE BACKGROUND */
 
