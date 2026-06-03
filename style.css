@@ -269,9 +269,11 @@ form {
 
 .container.active .form-box.register {
     bottom: 0 !important;
-    padding-top: 190px !important;
+    top: auto !important;
+    padding-top: 120px !important;
     visibility: visible;
 }
+
 
 
   /* TOGGLE BACKGROUND */
