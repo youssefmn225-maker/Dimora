@@ -231,6 +231,7 @@ form {
 @media screen and (max-width: 650px) {
 
   .container {
+    width: 100%;
     height: calc(100vh - 40px);
   }
 
