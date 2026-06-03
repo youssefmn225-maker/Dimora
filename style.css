@@ -269,10 +269,14 @@ form {
 
 .container.active .form-box.register {
     bottom: 0 !important;
-    top: auto !important;
-    padding-top: 120px !important;
-    visibility: visible;
+    top: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; /* بيسحب كل الكلام والزراير لأول الصفحة فوق */
+    padding-top: 60px !important;           /* بيسيب مسافة خفيفة من السقف ويبدأ يرص الحقول */
 }
+
 
 
 
