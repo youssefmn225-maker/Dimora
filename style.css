@@ -351,7 +351,7 @@ form {
     text-align: center;
   }
 
-}.container {
+.container {
     position: relative;
 }
 
@@ -370,5 +370,6 @@ form {
         left: 15px;
         width: 65px;
     }
+}
 
 
