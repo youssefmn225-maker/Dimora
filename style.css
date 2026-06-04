@@ -355,19 +355,27 @@ form {
     position: relative;
 }
 
+/* تنسيق اللوجو الأساسي */
 .main-top-logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 75px;
+    width: 70px;
     height: auto;
-    z-index: 100;
+    z-index: 5;
+    margin-bottom: 10px; /* سيب مسافة تحت اللوجو قبل العنوان */
 }
 
-@media screen and (max-width: 576px) {
+/* التعديل داخل الميديا كويري للموبايل */
+@media screen and (max-width: 650px) {
+    .toggle-panel {
+        position: relative; /* ده اللي كان ناقص! */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .main-top-logo {
-        top: 15px;
-        left: 15px;
-        width: 65px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
     }
 }
